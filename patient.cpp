@@ -7,7 +7,6 @@ Patient::Patient(QObject *parent)
 	: QObject{parent}
 	, m_name("Петров")
 {
-	time = 0;
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(TimerSlot()));
 	timer->start(1000);
@@ -191,29 +190,17 @@ void Patient::setFico2(int newFico2)
 
 void Patient::generateData()
 {
-	int heart_rate_value = GetRandomNumber(60,80);
-	int pulse_rate_value = GetRandomNumber(60,80);
-	int spo2_value = GetRandomNumber(90,100);
-	int syst_p_value = GetRandomNumber(90,140);
-	int diast_p_value = GetRandomNumber(60,90);
-	int mean_p_value = GetRandomNumber(85,110);
-	double temp1_value = GetRandomNumberDouble(36.3,37,1);
-	double temp2_value = GetRandomNumberDouble(36.3,37,1);
-	int resp_rate_value = GetRandomNumber(15,19);
-	int etco2_value = GetRandomNumber(30,50);
-	int fico2_value = GetRandomNumber(1,5);
-
-	setHeart_rate(heart_rate_value);
-	setPulse_rate(pulse_rate_value);
-	setSpo2(spo2_value);
-	setSyst_p(syst_p_value);
-	setDiast_p(diast_p_value);
-	setMean_p(mean_p_value);
-	setTemp1(temp1_value);
-	setTemp2(temp2_value);
-	setResp_rate(resp_rate_value);
-	setEtco2(etco2_value);
-	setFico2(fico2_value);
+	setHeart_rate(GetRandomNumber(60,80));
+	setPulse_rate(GetRandomNumber(60,80));
+	setSpo2(GetRandomNumber(90,100));
+	setSyst_p(GetRandomNumber(90,140));
+	setDiast_p(GetRandomNumber(60,90));
+	setMean_p(GetRandomNumber(85,110));
+	setTemp1(GetRandomNumberDouble(36.3,37,1));
+	setTemp2(GetRandomNumberDouble(36.3,37,1));
+	setResp_rate(GetRandomNumber(15,19));
+	setEtco2(GetRandomNumber(30,50));
+	setFico2(GetRandomNumber(1,5));
 }
 
 void Patient::TimerSlot()

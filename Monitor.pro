@@ -24,3 +24,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     getrand.h \
     patient.h
+
+CONFIG += console
+
+CONFIG += qmltypes
+QML_IMPORT_NAME = Patient
+QML_IMPORT_MAJOR_VERSION = 1

@@ -70,7 +70,6 @@ private:
 	int m_fico2;
 
 	QTimer *timer;
-	int time;
 
 private slots:
 	void TimerSlot();

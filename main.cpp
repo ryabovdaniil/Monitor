@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 #endif
 	QApplication app(argc, argv);
 
-	qmlRegisterType<Patient>("patient", 1, 0, "Patient");
+	//qmlRegisterType<Patient>("patient", 1, 0, "Patient");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
